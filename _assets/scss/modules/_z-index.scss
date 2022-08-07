@@ -1,0 +1,17 @@
+@use '../mixin/mixin'as *;
+@use '../setting/setting'as *;
+
+//------------------------------------
+// z-indexの管理
+//------------------------------------
+.header.drawer-active {
+  z-index: 100;
+}
+
+.drawer-nav {
+  z-index: 30;
+}
+
+.feature-imgWrapper {
+  z-index: 10;
+}

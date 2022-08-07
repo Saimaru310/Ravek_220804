@@ -1,0 +1,81 @@
+@use '../mixin/mixin'as *;
+@use '../setting/setting'as *;
+
+//------------------------------------
+// btn
+//------------------------------------
+.btn {
+  display: inline-block;
+  color: $color-font-reverse;
+  background-color: $color-main;
+  line-height: 1;
+  font-weight: bold;
+  border-radius: 999px;
+  position: relative;
+  top: 0;
+  font-size: rem(18);
+  padding: rem(18) rem(26);
+
+  &:focus,
+  &:hover {
+    top: rem(-8);
+    transition: all 0.3s;
+    opacity: 1;
+  }
+
+  &--big {
+    font-size: rem(24);
+    padding: rem(23) rem(56);
+
+    @include media(s) {
+      font-size: rem(18);
+      padding: rem(20) rem(42);
+    }
+  }
+
+  &--small {
+    font-size: rem(16);
+    padding: rem(12) rem(27);
+  }
+
+  &--shadow {
+    box-shadow: 0 4px 6px rgba(#000, 0.24);
+  }
+
+  &--reverse {
+    color: $color-main;
+    background-color: $color-font-reverse;
+    border: 2px solid currentColor;
+  }
+
+  &--price {
+    color: $color-font;
+    background-color: $color-font-reverse;
+    padding: rem(16) rem(45.5);
+
+    @include media(s) {
+      font-size: rem(16);
+      padding: rem(13) rem(19.5);
+    }
+  }
+
+  &--price-accent {
+    color: $color-font-reverse;
+    background-color: $color-main;
+  }
+
+  &--border {
+    border: 2px solid currentColor;
+    padding: rem(14) rem(43.5);
+
+    @include media(s) {
+      padding: rem(11) rem(17.5);
+    }
+  }
+
+  &--drawer {
+    width: 300px;
+    max-width: 100%;
+    text-align: center;
+  }
+}

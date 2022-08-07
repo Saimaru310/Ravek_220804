@@ -1,0 +1,17 @@
+@use '../setting/setting' as s;
+@use 'sass:map';
+
+// ブレイクポイントの設定----------------------------
+$breakpoints: ("xs": "screen and (max-width: 767px)",
+	"s": "screen and (max-width: 1023px)",
+	"m": "screen and (max-width: 1239px)",
+	"l": "screen and (max-width: 1439px)",
+	"xl": "screen and (min-width: 1440px)",
+);
+
+// mixinの設定---------------------------------
+@mixin media($breakpoint) {
+	@media #{map.get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}

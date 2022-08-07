@@ -1,0 +1,75 @@
+@use '../mixin/mixin'as *;
+@use '../setting/setting'as *;
+
+//------------------------------------
+// layout
+//------------------------------------
+.inner {
+  max-width: rem(1440);
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 rem(120);
+
+  @include media(m) {
+    padding: 0 rem(60);
+
+    @include media(xs) {
+      padding: 0 rem(20);
+    }
+  }
+}
+
+.section {
+  padding: rem(95) 0;
+
+  @include media(xs) {
+    padding: rem(60) 0;
+  }
+
+  &--bg {
+    background-color: $color-bg;
+  }
+}
+
+.section-title {
+  font-weight: bold;
+  text-align: center;
+
+  &__main {
+    font-size: rem(48);
+    line-height: 1;
+    letter-spacing: 0.05em;
+    color: $color-main;
+
+    @include media(m) {
+      font-size: rem(30);
+      line-height: calc(42/30);
+    }
+
+    strong {
+      font-size: rem(60);
+
+      @include media(xs) {
+        font-size: rem(38);
+        line-height: calc(42/38);
+      }
+    }
+  }
+
+  &__sub {
+    display: block;
+    font-size: rem(36);
+    line-height: calc(36/35.8);
+    color: $color-sub;
+    margin-bottom: rem(24);
+
+    @include media(m) {
+      font-size: rem(22);
+      line-height: 1;
+
+      @include media(xs) {
+        margin-bottom: rem(12);
+      }
+    }
+  }
+}

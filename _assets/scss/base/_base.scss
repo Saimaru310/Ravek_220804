@@ -1,0 +1,92 @@
+@use '../mixin/mixin'as *;
+@use '../setting/setting'as *;
+
+//------------------------------------
+// ベースCSS
+//------------------------------------
+body {
+	line-height: $line-height;
+	font-family: $font-family-ja;
+	color: $color-font;
+	overflow-x: hidden;
+	scrollbar-width: none; //Firefox対応のスクロールバー非表示コード
+	-ms-overflow-style: none; //Internet Explore対応のスクロールバー非表示コード
+
+	&::-webkit-scrollbar {
+		display: none; //Google Chrome、Safari、Microsoft Edge対応のスクロールバー非表示コード
+	}
+
+	&.drawer-active {
+		padding-top: rem(72);
+
+		@include media(xs) {
+			padding-top: rem(52);
+		}
+	}
+
+	&.is-fixed {
+		width: 100%;
+		height: 100%;
+		position: fixed;
+	}
+
+	a {
+
+		&:focus,
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+}
+
+.max-m {
+	display: none;
+
+	@include media(m) {
+		display: block;
+	}
+}
+
+.max-s {
+	display: none;
+
+	@include media(s) {
+		display: block;
+	}
+}
+
+.min-l {
+	display: block;
+
+	@include media(m) {
+		display: none;
+	}
+}
+
+.min-s {
+	display: block;
+
+	@include media(xs) {
+		display: none;
+	}
+}
+
+.only-s {
+	display: none;
+
+	@include media(s) {
+		display: block;
+
+		@include media(xs) {
+			display: none;
+		}
+	}
+}
+
+.only-xs {
+	display: none;
+
+	@include media(xs) {
+		display: block;
+	}
+}

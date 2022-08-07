@@ -1,0 +1,38 @@
+@charset 'UTF-8';
+
+// フォントの設定----------------------------
+$base-font-size: 16;
+
+html {
+	font-size: $base-font-size + px;
+}
+
+@function rem($px) {
+	@return calc($px / $base-font-size * 1rem);
+}
+
+$base-width: 1440;
+
+@function vw($px) {
+	@return calc($px / $base-width * 100vw);
+}
+
+$line-height: calc(28.6/16);
+
+$font-family-ja: 'Noto Sans JP',
+sans-serif;
+$font-family-en: 'Hind',
+sans-serif;
+
+// 色の設定----------------------------
+$color-font: #2D2D32;
+$color-font-reverse: #FFFFFF;
+
+$color-bg: #F9F9F9;
+$color-mv: #EDECFC;
+$color-footer: #000000;
+
+$color-main: #64629D;
+$color-sub: #9F9EC1;
+
+$color-arrow: #C4C4C4;
